@@ -13,13 +13,15 @@ A comprehensive collection of vulnerable environments paired with ready-to-use N
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
+
 ```bash
-git clone https://github.com/yourusername/Nuclei-Templates-Labs.git
-cd Nuclei-Templates-Labs
+git clone https://github.com/projectdiscovery/nuclei-templates-labs.git
+cd nuclei-templates-labs
 ```
 
-### 2. Install dependencies
-Ensure you have **Docker** and **Docker Compose** installed.
+### 2. Install Dependencies
+
+- Ensure you have **Docker** and **Docker Compose** installed.
 
 ```bash
 # Install Docker (if not installed)
@@ -29,31 +31,33 @@ sudo apt update && sudo apt install docker.io -y
 sudo apt install docker-compose -y
 ```
 
-### 3. Launch the vulnerable environment
+### 3. Launch the Vulnerable Environment
+
+- Navigate to the specific directory for the lab and follow the setup instructions. Each lab may contain a `docker-compose.yml` file or other setup instructions.
+
+- For example, if setting up CVE-2024-55416, move to its directory and follow the appropriate setup steps:
+
 ```bash
-docker-compose up -d
+cd http/cve/2024/CVE-2024-55416
+docker-compose up -d  # If a docker-compose.yml file is present
 ```
-This will spin up all the vulnerable services needed for testing.
+
+- Refer to the lab's documentation for any additional setup requirements.
 
 ### 4. Install Nuclei
-If you haven’t installed Nuclei yet, run:
+
+- If you haven’t installed Nuclei yet, run:
+
 ```bash
-# Install Nuclei
-curl -s https://api.github.com/repos/projectdiscovery/nuclei/releases/latest | grep browser_download_url | grep linux_amd64.zip | cut -d '"' -f 4 | wget -i -
-unzip nuclei-linux-amd64.zip
-chmod +x nuclei
-sudo mv nuclei /usr/local/bin/
+go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 ```
-Verify the installation:
+
+Or download from [ProjectDiscovery's releases](https://github.com/projectdiscovery/nuclei/releases).
+
+- Verify the installation:
 ```bash
 nuclei -version
 ```
-
-### 5. Run Nuclei against the lab environments
-```bash
-nuclei -t templates/ -u http://<LAB_IP>:<PORT>
-```
-Replace `<LAB_IP>` and `<PORT>` with the appropriate values for the running environment.
 
 ## 📄 Lab Scenarios
 Each lab scenario comes with:
