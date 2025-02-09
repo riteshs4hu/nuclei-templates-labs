@@ -10,7 +10,7 @@ DevDojo Voyager contains default credentials when run with dummy data. An attack
 
 - Execute the following commands to start a Laravel Voyager 1.8.0 server:
 
-```
+```bash
 docker compose up -d
 ```
 
@@ -31,6 +31,8 @@ Password: password
 ![image](https://github.com/user-attachments/assets/7935b0f8-1966-44c9-9d35-21a8aac72e41)
 
 - You will be Successfully Logged in with Admin Privilege.
+
+![image](https://github.com/user-attachments/assets/36f2829d-080d-48c0-991d-03ac5d00347b)
 
 # Steps to Write Nuclei Template
 
@@ -102,3 +104,4 @@ variables:
 nuclei -t devdojo-voyager-default-login.yaml -u http://172.30.0.2:8000 -vv
 ```
 
+![image](https://github.com/user-attachments/assets/7c37d141-5481-4c25-ae0b-3ea73b3a5d3a)
