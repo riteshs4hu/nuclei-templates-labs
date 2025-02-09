@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  laravel:
+    image: php:8.2-apache
+    container_name: laravel-voyager
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    ports:
+      - "8000:8000"
+    command: ["sh", "-c", "apt update && apt install -y curl unzip git zip && docker-php-ext-install pdo_mysql && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && composer create-project laravel/laravel voyager-app && cd voyager-app && composer require tcg/voyager:1.8.0 && php artisan voyager:install --with-dummy && php artisan serve --host=0.0.0.0 --port=8000"]
+    environment:
+      - APACHE_RUN_USER=#1000
+      - APACHE_RUN_GROUP=#1000
+    tty: true
