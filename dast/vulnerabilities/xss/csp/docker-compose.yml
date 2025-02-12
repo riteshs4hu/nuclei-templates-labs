@@ -1,0 +1,13 @@
+version: '3'
+services:
+  csp-server:
+    image: node:slim
+    container_name: csp_server
+    working_dir: /app
+    volumes:
+      - ./server.js:/app/server.js
+    ports:
+      - "2000-2203:2000-2203"
+    command: bash -c "npm init -y && npm install express && node server.js"
+    environment:
+      - NODE_ENV=production
