@@ -22,7 +22,7 @@ Username: admin@admin.com
 
 Password: password
 
-# Exploitation Steps
+## Exploitation Steps
 
 - Navigate to your URL http://your-ip:8000/admin
 
@@ -34,7 +34,7 @@ Password: password
 
 ![image](https://github.com/user-attachments/assets/36f2829d-080d-48c0-991d-03ac5d00347b)
 
-# Steps to Write Nuclei Template
+## Steps to Write Nuclei Template
 
 **Variables Section**
 
