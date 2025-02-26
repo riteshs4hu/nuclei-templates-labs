@@ -46,6 +46,13 @@ tcp:
 
 **Matching `mysql_native_password` Authentication Plugin**
 
+```yaml
+    matchers:
+      - type: word
+        words:
+          - "mysql_native_password"
+```
+
 - Looks for "mysql_native_password" in the MySQL server's handshake response.
 - Confirms that the MySQL server uses this authentication plugin, which can be vulnerable to brute-force attacks.
 
