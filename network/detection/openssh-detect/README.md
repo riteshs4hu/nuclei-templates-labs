@@ -42,7 +42,7 @@ nc -v localhost 22
 
 ## Steps to Write Nuclei Template
 
-**TCP Service Check**
+- **TCP Service Check**
 
 ```
 tcp:
@@ -54,7 +54,7 @@ tcp:
 - Specifies the target host and checks **port 22** (default for SSH).
 - Ensures the OpenSSH service is accessible over TCP.
 
-**Matching OpenSSH Banner**
+- **Matching OpenSSH Banner**
 
 ```
 matchers:
@@ -66,7 +66,7 @@ matchers:
 - Looks for the "**OpenSSH**" keyword in the SSH banner response.
 - Uses a case-insensitive regex to identify OpenSSH presence.
 
-**Extracting OpenSSH Version**
+- **Extracting OpenSSH Version**
 
 ```yaml
 extractors:
