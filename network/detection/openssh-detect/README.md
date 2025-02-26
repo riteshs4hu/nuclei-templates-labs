@@ -44,7 +44,7 @@ nc -v localhost 22
 
 **TCP Service Check**
 
-```
+```yaml
 tcp:
   - host:
       - "{{Hostname}}"
@@ -56,7 +56,7 @@ tcp:
 
 **Matching OpenSSH Banner**
 
-```
+```yaml
 matchers:
   - type: regex
     regex:
