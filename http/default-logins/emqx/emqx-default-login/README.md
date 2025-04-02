@@ -73,3 +73,5 @@ This template attempts to authenticate using the default credentials and checks 
 ```bash
 nuclei -id emqx-default-login -u http://localhost:18083 -vv
 ```
+
+![image](https://github.com/user-attachments/assets/5e3a50a2-57f1-4af3-aefd-f172ebafd381)
