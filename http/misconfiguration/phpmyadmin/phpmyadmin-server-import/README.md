@@ -15,6 +15,7 @@ Once running, phpMyAdmin will be accessible at: `http://localhost:8080/phpMyAdmi
 
 ## Exploitation Steps
 - Open a browser and navigate to: `http://your-ip:8080/phpMyAdmin/server_import.php`
+![phpmyadmin-server-import-1](https://github.com/user-attachments/assets/c76919f7-7b52-44e8-a841-d1139e53a16f)
 
 This page, if accessible without authentication, exposes the SQL import functionality.
 ## Steps to Write Nuclei Template
@@ -74,3 +75,4 @@ http:
 ```bash
 nuclei -id pma-server-import -u localhost:8080 -vv
 ```
+![phpmyadmin-server-import-2](https://github.com/user-attachments/assets/2f8bb644-1a94-489c-92df-d5257688dd69)
