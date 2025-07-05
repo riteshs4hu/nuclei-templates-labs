@@ -11,6 +11,8 @@ Once the container is running, the Ray Dashboard will be available at: `http://l
 
 ## Exploitation Steps
 - Open your web browser and navigate to: `http://your-ip:8265/`
+  ![ray-dashboard-2](https://github.com/user-attachments/assets/88f915dc-e970-4ed0-806e-737673781ba2)
+
 
 ## Steps to Write Nuclei Template  
 
@@ -48,3 +50,4 @@ http:
 ```bash
 nuclei -id ray-dashboard -u localhost:8265 -vv
 ```
+![ray-dashboard-1](https://github.com/user-attachments/assets/8bf959fa-a3e4-4e8f-a34f-10190949b6c9)
