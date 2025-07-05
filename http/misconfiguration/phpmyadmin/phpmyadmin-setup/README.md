@@ -19,6 +19,7 @@ Once running, phpMyAdmin will be accessible at: `http://localhost:8080`
 
 ## Exploitation Steps
 - Open a browser and navigate to: `http://your-ip:8080/setup/index.php`
+![phpmyadmin-setup-1](https://github.com/user-attachments/assets/b1b0d075-5253-48b4-bbc6-c7e59667f8c7)
 
 
 ## Steps to Write Nuclei Template  
@@ -85,3 +86,4 @@ http:
 ```bash
 nuclei -id phpmyadmin-setup -u localhost:8080 -vv
 ```
+![phpmyadmin-setup-2](https://github.com/user-attachments/assets/47659582-80e9-430b-9710-dc565fa21ada)
