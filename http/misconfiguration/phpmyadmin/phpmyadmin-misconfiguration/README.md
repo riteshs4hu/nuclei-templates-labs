@@ -18,6 +18,7 @@ Once running, phpMyAdmin will be accessible at: `http://localhost:8080`
 
 ## Exploitation Steps  
 - Open a browser and navigate to: `http://your-ip:8080/phpMyAdmin/index.php?db=information_schema`
+![phpmyadmin-misconfiguration-1](https://github.com/user-attachments/assets/3a569916-aecc-452c-bee4-746f71d4d043)
 
 - If successful, you’ll gain access to the internal database schema without authentication.
 
@@ -65,3 +66,4 @@ http:
 ```bash
 nuclei -id phpmyadmin-misconfiguration -u localhost:8080 -vv
 ```
+![phpmyadmin-misconfiguration-2](https://github.com/user-attachments/assets/889f9dda-9b8e-430b-9019-75e0a37e0b11)
