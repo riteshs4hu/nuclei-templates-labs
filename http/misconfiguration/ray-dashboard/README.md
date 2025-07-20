@@ -1,5 +1,9 @@
 # Ray Dashboard Exposure
 
+## Description  
+
+Ray Dashboard is a web-based UI for monitoring and managing Ray distributed computing clusters. When exposed without authentication, it reveals sensitive information such as task statuses, cluster topology, logs, and resource usage. Unauthorized access to this dashboard may lead to information disclosure and potential misuse of the compute environment.
+
 ## Lab Setup
 
 - Run the following command to build and start the container:
@@ -7,15 +11,14 @@
   ```bash
   docker-compose up -d
   ```
-Once the container is running, the Ray Dashboard will be available at: `http://localhost:8265`
+
+- Once the container is running, the Ray Dashboard will be available at: `http://localhost:8265`
 
 ## Exploitation Steps
 - Open your web browser and navigate to: `http://your-ip:8265/`
   ![ray-dashboard-2](https://github.com/user-attachments/assets/88f915dc-e970-4ed0-806e-737673781ba2)
 
-
 ## Steps to Write Nuclei Template  
-
 
 **HTTP Requests**
 ```yaml
@@ -24,6 +27,7 @@ http:
     path:
       - "{{BaseURL}}"
 ```
+
 - This request attempts to load the root of the Ray Dashboard.
 
 **Matchers: Detecting Access**
@@ -39,6 +43,7 @@ http:
         status:
           - 200
 ```
+
 - These matchers confirm:
     - The response status is 200 OK, indicating the page loaded successfully.
     - The body contains the string "Ray Dashboard", confirming that the exposed interface is indeed Ray's dashboard.
@@ -50,4 +55,5 @@ http:
 ```bash
 nuclei -id ray-dashboard -u localhost:8265 -vv
 ```
+
 ![ray-dashboard-1](https://github.com/user-attachments/assets/8bf959fa-a3e4-4e8f-a34f-10190949b6c9)
